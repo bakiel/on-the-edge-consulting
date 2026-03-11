@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On The Edge Consulting — ESG &amp; Sustainability Advisory</title>
+<meta name="description" content="Boutique ESG and sustainability advisory firm based in South Africa. Strategy, compliance, and transformation at the edge of business and responsibility.">
+<!-- Open Graph / WhatsApp / Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bakiel.github.io/on-the-edge-consulting/">
+<meta property="og:title" content="On The Edge Consulting — ESG &amp; Sustainability Advisory">
+<meta property="og:description" content="Where business performance meets environmental and social responsibility. Strategy. Compliance. Transformation. Roodepoort, South Africa.">
+<meta property="og:image" content="https://bakiel.github.io/on-the-edge-consulting/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_ZA">
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="On The Edge Consulting — ESG &amp; Sustainability Advisory">
+<meta name="twitter:description" content="Where business performance meets environmental and social responsibility.">
+<meta name="twitter:image" content="https://bakiel.github.io/on-the-edge-consulting/images/og-share.jpg">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --forest-dk:  #0A1810;
+  --forest-mid: #0F2218;
+  --forest:     #1B3A2D;
+  --terra:      #C4622D;
+  --terra-lt:   #E8703A;
+  --gold:       #C5953A;
+  --cream:      #F5F2ED;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: var(--forest-dk);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════
+   LOADER
+═══════════════════════════════════ */
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--forest-dk);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+#loader-disc {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+#loader-svg {
+  width: 94px;
+  height: 94px;
+}
+
+/* All paths start invisible — GSAP reveals them earth→warmth */
+#loader-svg path { opacity: 0; }
+
+#loader-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  color: var(--cream);
+  letter-spacing: 0.5px;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+#loader-tagline {
+  font-size: 8.5px;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  color: var(--terra-lt);
+  opacity: 0;
+}
+
+#loader-bar-wrap {
+  width: 100px;
+  height: 1px;
+  background: rgba(245,242,237,0.08);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+#loader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, var(--terra), var(--gold));
+}
+
+/* ═══════════════════════════════════
+   NAV
+═══════════════════════════════════ */
+#nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.5s ease, padding 0.3s ease, border-color 0.5s;
+}
+
+#nav.scrolled {
+  background: rgba(10,24,16,0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 14px 52px;
+  border-bottom: 1px solid rgba(197,149,58,0.12);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+.nav-disc {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-disc img { width: 32px; height: 32px; object-fit: contain; }
+
+.nav-brand-name {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: var(--cream);
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+
+.nav-brand-sub {
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--terra);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(245,242,237,0.65);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--cream); }
+
+.nav-cta {
+  padding: 9px 20px !important;
+  background: var(--terra);
+  color: #fff !important;
+  letter-spacing: 2px !important;
+}
+
+.nav-cta:hover { background: var(--terra-lt); color: #fff !important; }
+
+/* ═══════════════════════════════════
+   HERO
+═══════════════════════════════════ */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 65% top;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(10,24,16,0.10) 0%,
+    rgba(10,24,16,0.08) 15%,
+    rgba(10,24,16,0.38) 42%,
+    rgba(10,24,16,0.84) 63%,
+    rgba(10,24,16,1.00) 79%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0; left: 0;
+  padding: 0 60px 88px;
+  max-width: 880px;
+}
+
+.hero-eyebrow {
+  font-size: 8.5px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--terra-lt);
+  margin-bottom: 22px;
+  opacity: 0;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+}
+
+.hero-h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 0.88;
+  margin-bottom: 28px;
+}
+
+.hero-h1 .line1 {
+  display: block;
+  font-size: clamp(72px, 8.5vw, 114px);
+  font-weight: normal;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(245,242,237,0.88);
+  letter-spacing: 2px;
+  opacity: 0;
+}
+
+.hero-h1 .line2 {
+  display: block;
+  font-size: clamp(100px, 13vw, 172px);
+  font-weight: normal;
+  color: var(--cream);
+  letter-spacing: -2px;
+  text-shadow: 0 8px 48px rgba(0,0,0,0.6);
+  opacity: 0;
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: rgba(245,242,237,0.9);
+  line-height: 1.72;
+  max-width: 500px;
+  margin-bottom: 36px;
+  opacity: 0;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.75);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 30px;
+  background: var(--terra);
+  color: #fff;
+  text-decoration: none;
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover {
+  background: var(--terra-lt);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 30px;
+  border: 1px solid rgba(245,242,237,0.4);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 10.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.btn-outline:hover {
+  border-color: var(--cream);
+  background: rgba(245,242,237,0.06);
+  transform: translateY(-2px);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  right: 52px;
+  bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+}
+
+.hero-scroll-line {
+  width: 36px;
+  height: 1px;
+  background: rgba(245,242,237,0.3);
+}
+
+.hero-scroll-text {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,242,237,0.42);
+}
+
+/* ═══════════════════════════════════
+   ABOUT
+═══════════════════════════════════ */
+#about {
+  background: var(--forest-dk);
+  padding: 120px 60px;
+}
+
+.about-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: center;
+}
+
+.about-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image-wrap img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.about-image-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 64px; height: 3px;
+  background: var(--gold);
+}
+
+.about-image-wrap::before {
+  content: '';
+  position: absolute;
+  top: 18%; right: 0; bottom: 18%;
+  width: 3px;
+  background: var(--terra);
+}
+
+.section-eyebrow {
+  font-size: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: normal;
+  color: var(--cream);
+  line-height: 1.22;
+  margin-bottom: 24px;
+}
+
+.section-body {
+  font-size: 15px;
+  color: rgba(245,242,237,0.78);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+  padding-top: 44px;
+  border-top: 1px solid rgba(197,149,58,0.15);
+}
+
+.stat-number {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(245,242,237,0.45);
+}
+
+/* ═══════════════════════════════════
+   SERVICES
+═══════════════════════════════════ */
+#services {
+  background: #060f09;
+  padding: 120px 60px;
+}
+
+.services-header {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.services-lead {
+  max-width: 300px;
+  font-size: 13.5px;
+  color: rgba(245,242,237,0.48);
+  line-height: 1.65;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.service-card {
+  background: rgba(27,58,45,0.22);
+  border: 1px solid rgba(197,149,58,0.07);
+  border-left: 3px solid var(--terra);
+  padding: 52px 44px;
+  cursor: default;
+  will-change: transform;
+}
+
+.service-num {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-bottom: 22px;
+  opacity: 0.65;
+}
+
+.service-title {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  font-weight: normal;
+  color: var(--cream);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.service-desc {
+  font-size: 13.5px;
+  color: rgba(245,242,237,0.68);
+  line-height: 1.72;
+}
+
+/* ═══════════════════════════════════
+   APPROACH BAND
+═══════════════════════════════════ */
+#approach {
+  position: relative;
+  height: 72vh;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.approach-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.approach-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(10,24,16,0.96) 0%,
+    rgba(10,24,16,0.78) 50%,
+    rgba(10,24,16,0.20) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.approach-content { max-width: 620px; }
+
+.approach-quote {
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: normal;
+  color: var(--cream);
+  line-height: 1.45;
+  margin-bottom: 36px;
+}
+
+.approach-quote em {
+  color: var(--terra-lt);
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════
+   CONTACT
+═══════════════════════════════════ */
+#contact {
+  background: var(--forest-dk);
+  padding: 120px 60px 60px;
+  border-top: 1px solid rgba(197,149,58,0.08);
+}
+
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 88px;
+  align-items: start;
+}
+
+.contact-heading {
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: normal;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 44px;
+}
+
+.contact-items { display: flex; flex-direction: column; gap: 22px; }
+
+.contact-item { display: flex; align-items: flex-start; gap: 16px; }
+
+.contact-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--terra);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.contact-item-label {
+  font-size: 8.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(245,242,237,0.38);
+  margin-bottom: 4px;
+}
+
+.contact-item-value {
+  font-size: 15px;
+  color: var(--cream);
+}
+
+.contact-item-value a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.contact-item-value a:hover { color: var(--cream); }
+
+.contact-cta-text {
+  font-size: 15px;
+  color: rgba(245,242,237,0.72);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+/* ═══════════════════════════════════
+   FOOTER
+═══════════════════════════════════ */
+footer {
+  max-width: 1200px;
+  margin: 72px auto 0;
+  padding: 28px 0;
+  border-top: 1px solid rgba(197,149,58,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: rgba(245,242,237,0.28);
+  letter-spacing: 0.4px;
+}
+
+.footer-links { display: flex; gap: 28px; }
+
+.footer-links a {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,242,237,0.28);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(245,242,237,0.65); }
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media (max-width: 900px) {
+  .about-inner,
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .services-header { flex-direction: column; align-items: flex-start; }
+  .about-image-wrap img { height: 360px; }
+}
+
+@media (max-width: 640px) {
+  #nav { padding: 16px 24px; }
+  #nav.scrolled { padding: 12px 24px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 0 24px 80px; }
+  .hero-scroll-indicator { right: 24px; }
+  #about, #services, #contact { padding: 80px 24px; }
+  .approach-overlay { padding: 0 24px; }
+  footer { padding: 24px; margin: 40px 0 0; }
+}
+
+@media (max-width: 420px) {
+  .hero-h1 .line1 { font-size: 52px; }
+  .hero-h1 .line2 { font-size: 72px; }
+  .hero-ctas { flex-direction: column; }
+  .about-stats { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ LOADER ═══ -->
+<div id="loader">
+  <div id="loader-disc">
+    <svg id="loader-svg" viewBox="0 0 1499.05 1531.3" xmlns="http://www.w3.org/2000/svg">
+      <!-- Dark forest paths light first (cls-4) — deepest earth -->
+      <path class="cls-4" style="fill:#1f3f2c" d="M767.09.1c6.15.21,12.38-.27,18.54-.04,119.37,4.38,246.81,46.53,347.37,109.63,8.9,5.58,29.27,17.55,36.02,23.97.95.9,2.02,1.26,2.05,2.91.03,2-12.07,22.42-14.18,25.84-60.03,97.46-146.36,141.97-231.28,211.72-57,46.81-108.56,103.26-140.39,170.61-5.99,12.67-9.93,26.83-15.86,39.14-.57,1.19-.54,2.96-2.28,3.22V.1Z"/>
+      <path class="cls-4" style="fill:#1f3f2c" d="M1079.64,609.69c-32.58,32.91-72.69,58.11-109.47,86-68.46,51.92-137.29,104.49-180.26,180.74-7.9,14.03-13.86,28.91-20.56,43.48-.65,1.42.59,2.72-2.26,2.18,1.12-46.43-1.5-93.12-.05-139.54,3.61-115.68,35.14-229.76,112.07-317.93,81.26-93.14,197.94-143.63,275.95-241.05,5.67-7.08,10.23-15.55,17.02-21.47l.05,181.54c-5.04,86.43-31.14,164.06-92.49,226.04Z"/>
+      <!-- Medium forest (cls-3) -->
+      <path class="cls-3" style="fill:#2e5540" d="M479.68,294.52c61.63,44.39,116.08,92.15,158.82,155.67,67.84,100.82,89.91,222.41,94.63,342.37l-.05,243.54-20.47-42.02c-60.42-112.54-165.32-179.58-256.54-263.46-90.19-82.93-135.82-181.36-140.03-304.97l.05-241.54,4.35,1.15c50.95,39.45,107.02,71.65,159.24,109.26Z"/>
+      <path class="cls-3" style="fill:#2e5540" d="M733.09.1v565c-1.74-.27-1.74-1.99-2.27-3.23-5.98-13.97-10.25-29.55-16.26-43.74-47.97-113.38-131.59-193.16-230.75-262.25-49.88-34.76-106.37-66.7-153.64-104.36-3.52-2.81-11.64-7.3-7.46-11.29,8.46-8.06,27.4-19.39,37.85-26.14,77.83-50.3,166.92-85.87,258.34-102.66C656.35,4.54,694.98.17,733.09.1Z"/>
+      <path class="cls-3" style="fill:#2e5540" d="M316.09,595.1c2.91-.55,1.6.84,2.26,2.2,36.42,74.51,66.89,115.73,128.73,171.32,34.37,30.9,72.3,57.79,105.01,90.48-7.09-1.17-13.84-4.02-20.79-5.7-69.48-16.74-144.18-6.37-215.21-9.29v-249Z"/>
+      <!-- Olive (cls-5) — stone and earth -->
+      <path class="cls-5" style="fill:#747745" d="M641.51,959.69c73.94,78.68,89.22,180.32,91.62,284.88,1.22,52.87-1.25,105.75-1.05,158.54-7.99-11.15-15.26-22.77-24.48-33.01-36.56-40.62-86.83-58.63-133.54-83.46-147.12-78.22-245-176.35-256.97-352.03-.98-14.43-2.74-39.36-1.06-53.04.24-1.95.13-3.28,2.55-3.45,75.44,3.9,157.64-10.97,229.49,16.52,35.54,13.59,67.58,37.56,93.43,65.07Z"/>
+      <path class="cls-5" style="fill:#747745" d="M316.09,1081.1c1.5.23,1.88,1.88,2.52,2.98,7.28,12.42,12.85,27.67,20.31,40.69,47.69,83.25,120.66,138.12,203.5,183.5,68.86,37.72,139.5,56.72,171.44,136.56,10.77,26.92,14.91,55.03,17.18,83.86-.03,2.3-1.61,2.23-3.4,2.45-4.71.59-20.3-.69-26.04-1.06-21.66-1.39-45.27-4.72-66.72-8.28-114.93-19.11-225.85-65.38-318.79-135.21v-305.5Z"/>
+      <path class="cls-5" style="fill:#747745" d="M1406.09,1133.1c1.29,1.15-14.4,27.31-16.19,30.31-45.74,76.19-105.89,143.83-173.84,200.13l-9.96,5.56v-236h200Z"/>
+      <path class="cls-5" style="fill:#747745" d="M98.09,844.1c-12.65,0-25.35,0-38,0,1.04-1.66,3.79-1,5.49-1.02,8.99-.09,18.04-.11,27.03,0,1.69.02,4.45-.64,5.49,1.02Z"/>
+      <path class="cls-5" style="fill:#747745" d="M24.09,844.1c-5.26.02-10.79-.3-16,0,4.27-1.7,11.93-1.66,16,0Z"/>
+      <!-- Gold (cls-2) — sun arrives -->
+      <path class="cls-2" style="fill:#c79560" d="M1479.04,592.15c2.79,17.07,6.82,33.9,9.61,50.98,14.87,90.99,14,184.11-3.99,274.97-11.48,57.99-30.49,114.12-53.53,165.56-1.6,3.57-4.96,13.28-7.56,15.44-3.41,2.84-14.35.03-18.94-.04-57.68-.84-115.29,1.05-173.01,1.09-8.57,0-17.08-.42-25.62-.51l.03-255.08c2.05-32.07,9.27-62.83,21.58-92.42,41.76-100.39,142.5-163.73,251.43-159.99Z"/>
+      <path class="cls-2" style="fill:#c79560" d="M282.09,878.1v482l-15.01-11.49c-138.65-119.95-232.39-287.87-257.99-470.51h273Z"/>
+      <path class="cls-2" style="fill:#c79560" d="M1172.09,1395.6c-116.33,82.29-256.7,131.13-400.01,135.51-.22-6.82.31-13.72.05-20.55-4.85-127.78,16.07-261.52,132.09-335.83,80.09-51.29,152.35-40.08,241.34-40.58,6.74-.04,15.2-1.44,22.04-1.15,1.14.05,4.49.24,4.49,1.6v261Z"/>
+      <path class="cls-2" style="fill:#c79560" d="M274.09,844.1c-13.3.24-26.69-.03-40,0h40Z"/>
+      <path class="cls-2" style="fill:#c79560" d="M278.09,844.1c-.33.02-.67-.01-1,0l.5-.98.5.98Z"/>
+      <!-- Terracotta (cls-1) — flame, warmth, last to arrive -->
+      <path class="cls-1" style="fill:#974527" d="M1238.54,189.68c65.57,58.51,119.11,123.54,162.1,200.36,25.88,46.24,54.7,109.61,67.15,160.85.58,2.38,1.5,4.69,1.29,7.2-11.03,1.58-22.3.92-33.37,2.13-103.09,11.26-190.85,76.79-235.02,169.98-9.84,20.76-13.24,32.86-18.63,53.2-.23.85-2,.64-2,1.26,0,5.01-1.01,3.57-1.02,3.99-.02.83,1.1,2.03,1.09,2.88-.01.63-2.02.46-2.11,1.18-.24,2.03.34,7.69.12,9.76-.07.71-2.02.56-2.12,1.24-.22,1.56,1.49,3.81,1.11,5.74-.14.72-2.03.57-2.1,1.27-.27,2.68.42,10.99.1,12.73-.13.7-1.94.58-2.08,1.3-.42,2.16,1.62,5.08,1.05,7.66-.17.79-1.83.23-2.09,2.11-.95,6.83,2.02,17.41.04,25.01l.62,239.59-3.04,1.02c-67.21,2.79-137.4-7.85-202.76,10.24-69.96,19.36-129.41,64.14-169.6,126.4-6.72,10.41-14.81,23.52-19.49,33.54-2.63,5.62-4.69,13.85-7.93,19.04-.78,1.25-.94,2.11-2.76,1.73l-.03-194.55c3.67-106.25,34.64-200.22,108-277.97,95.4-101.1,238.32-151.16,297.2-284.8,21.35-48.46,30.39-101.46,33.87-154.13l-.04-217.54c1.74-.46,2,.73,3,1.49,10.36,7.84,19.85,17.52,29.45,26.08Z"/>
+      <path class="cls-1" style="fill:#974527" d="M8.09,844.1c-.56.03-1.6,1.54-2.99,1,.09-1.6-.72-3.07-.9-4.61-25.97-230.42,70.35-476.38,236.87-633.9,12.83-12.14,26.94-23.05,39.53-35.48,3.84-.84,1.38,12.88,1.46,15.44,1.12,37.64.75,75.31.63,112.88-.56,181.02,1.24,362.29.18,543.46-2,2.12-3.43,1.12-4.78,1.22l-.5-.98-.5.98c-1,.04-2-.02-3,0h-40c-45.32.09-90.68.02-136,0-1.04-1.66-3.79-1-5.49-1.02-8.99-.11-18.04-.09-27.03,0-1.69.02-4.45-.64-5.49,1.02-11.99,0-24.01-.04-36,0-4.07-1.66-11.73-1.7-16,0Z"/>
+    </svg>
+  </div>
+  <div id="loader-name">On The Edge Consulting</div>
+  <div id="loader-tagline">ESG &amp; Sustainability Advisory</div>
+  <div id="loader-bar-wrap"><div id="loader-bar"></div></div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-disc">
+      <img src="logo/ote-icon-mark.svg" alt="OTE">
+    </div>
+    <div>
+      <div class="nav-brand-name">On The Edge</div>
+      <div class="nav-brand-sub">Consulting</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="images/cover-hero-v2.jpg" alt="On The Edge — at the forest boundary">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">ESG &amp; Sustainability Advisory &nbsp;·&nbsp; South Africa</div>
+    <h1 class="hero-h1">
+      <span class="line1">ON THE</span>
+      <span class="line2">EDGE.</span>
+    </h1>
+    <p class="hero-sub">Where business performance meets environmental and social responsibility. The precise boundary where compliance becomes strategy, and strategy becomes transformation.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-outline">Begin the Conversation</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-image-wrap">
+      <img src="images/forest-edge.jpg" alt="Forest Edge">
+    </div>
+    <div class="about-text">
+      <div class="section-eyebrow">Who We Are</div>
+      <h2 class="section-heading">Advisory built at the edge. Strategy rooted in purpose.</h2>
+      <p class="section-body">On The Edge Consulting is a boutique ESG and sustainability advisory firm based in Roodepoort, Gauteng. We guide South African businesses through the intersection of regulatory compliance, stakeholder expectation, and long-term value creation.</p>
+      <p class="section-body">Our work is precise, practical, and deeply rooted in the belief that sustainable business is simply good business - and that the organisations who lead on ESG will define the next decade of South African commerce.</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Expertise</div>
+        </div>
+        <div>
+          <div class="stat-number">4</div>
+          <div class="stat-label">Core Pillars</div>
+        </div>
+        <div>
+          <div class="stat-number">SA</div>
+          <div class="stat-label">Proudly Local</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-heading" style="margin-bottom:0;">Four pillars.<br>One direction.</h2>
+    </div>
+    <p class="services-lead">Focused advisory across the full ESG spectrum - from compliance architecture to cultural transformation.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3 class="service-title">ESG Strategy &amp; Reporting</h3>
+      <p class="service-desc">Integrated ESG frameworks aligned with GRI, SASB, and TCFD standards. From materiality assessments to sustainability reports that satisfy investors, funders, and regulators - built for the South African context.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3 class="service-title">Regulatory Compliance</h3>
+      <p class="service-desc">Navigating South Africa's evolving environmental and social legislation - NEMA, B-BBEE, King IV, and beyond. We translate compliance obligations into strategic advantage, not just administrative burden.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3 class="service-title">Stakeholder Engagement</h3>
+      <p class="service-desc">Communities, investors, boards, and regulators each require a different conversation. We craft and facilitate stakeholder engagement strategies that build genuine trust and durable license to operate.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <h3 class="service-title">Sustainability Training</h3>
+      <p class="service-desc">Equipping leadership and teams with the knowledge to embed sustainability thinking across the organisation. Practical, contextual, and built for the realities of the South African business environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ APPROACH BAND ═══ -->
+<section id="approach">
+  <img class="approach-img" src="images/sectors-landscape.jpg" alt="Forest landscape — our philosophy">
+  <div class="approach-overlay">
+    <div class="approach-content">
+      <div class="section-eyebrow" style="margin-bottom:28px;">Our Philosophy</div>
+      <p class="approach-quote">We work at the <em>precise boundary</em> where business performance meets environmental and social responsibility - the edge where compliance becomes strategy, and strategy becomes transformation.</p>
+      <a href="#contact" class="btn-primary">Begin the Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="contact-heading">Let's talk about your ESG journey.</h2>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-dot"></div>
+          <div>
+            <div class="contact-item-label">Director</div>
+            <div class="contact-item-value">Mapaseka Lukhele</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot" style="background:var(--gold)"></div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value"><a href="mailto:info@onthedge.co.za">info@onthedge.co.za</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot"></div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">060 572 9811</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot" style="background:var(--gold)"></div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Roodepoort, Gauteng, South Africa</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-dot"></div>
+          <div>
+            <div class="contact-item-label">Website</div>
+            <div class="contact-item-value"><a href="#">www.onthedge.co.za</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="contact-cta-text">Whether you are starting your ESG journey, looking to strengthen your reporting, or navigating a complex stakeholder environment - we would love to hear from you.</p>
+      <p class="contact-cta-text">Our advisory is personal, contextual, and tailored to the realities of operating in South Africa's regulatory and social landscape. We do not do generic frameworks - we do yours.</p>
+      <a href="mailto:info@onthedge.co.za" class="btn-primary" style="margin-top:8px;">Email Us Directly</a>
+    </div>
+  </div>
+  <footer>
+    <span class="footer-copy">© 2025 On The Edge Consulting (Pty) Ltd &nbsp;·&nbsp; Roodepoort, Gauteng</span>
+    <div class="footer-links">
+      <a href="#hero">Top</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══ SCRIPTS — LOCAL FILES ONLY, ZERO CDN ═══ -->
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── LOADER ──
+  // The OTE icon mark is built from 5 colour layers:
+  //   cls-4  #1f3f2c  Dark forest   — deepest earth, first to appear
+  //   cls-3  #2e5540  Medium forest  — canopy, second
+  //   cls-5  #747745  Olive          — stone and lichen, third
+  //   cls-2  #c79560  Gold           — sunlight breaking through, fourth
+  //   cls-1  #974527  Terracotta     — warmth, flame, last to ignite
+  // This sequence mirrors the natural world waking at dawn.
+
+  const ltl = gsap.timeline({
+    onComplete: () => {
+      document.getElementById('loader').style.pointerEvents = 'none';
+    }
+  });
+
+  ltl
+    // Disc breathes in
+    .to('#loader-disc', {
+      scale: 1, opacity: 1,
+      duration: 0.6, ease: 'back.out(1.7)'
+    }, 0.1)
+
+    // Paths ignite: earth to warmth
+    .to('#loader-svg .cls-4', { opacity: 1, duration: 0.28, ease: 'power2.out' }, 0.45)
+    .to('#loader-svg .cls-3', { opacity: 1, duration: 0.28, ease: 'power2.out' }, 0.60)
+    .to('#loader-svg .cls-5', { opacity: 1, duration: 0.28, ease: 'power2.out' }, 0.75)
+    .to('#loader-svg .cls-2', { opacity: 1, duration: 0.28, ease: 'power2.out' }, 0.90)
+    .to('#loader-svg .cls-1', { opacity: 1, duration: 0.28, ease: 'power2.out' }, 1.05)
+
+    // Warm glow radiates outward
+    .to('#loader-disc', {
+      boxShadow: '0 0 52px rgba(197,149,58,0.38), 0 0 100px rgba(196,98,45,0.14)',
+      duration: 0.55
+    }, 1.10)
+
+    // Brand name rises
+    .to('#loader-name', {
+      opacity: 1, y: 0,
+      duration: 0.5, ease: 'power2.out'
+    }, 1.22)
+
+    // Tagline appears
+    .to('#loader-tagline', {
+      opacity: 1,
+      duration: 0.4, ease: 'power1.out'
+    }, 1.52)
+
+    // Progress bar fills
+    .to('#loader-bar', {
+      width: '100%',
+      duration: 1.05, ease: 'power1.inOut'
+    }, 1.52)
+
+    // The mark breathes — one pulse
+    .to('#loader-disc', { scale: 1.08, duration: 0.22, ease: 'power2.inOut' }, 2.48)
+    .to('#loader-disc', { scale: 1.00, duration: 0.30, ease: 'power2.out' }, 2.70)
+
+    // ── REVEAL: loader ascends, site appears ──
+    .to('#loader', {
+      yPercent: -100,
+      duration: 0.88, ease: 'power3.inOut'
+    }, 3.05)
+    .set('#loader', { display: 'none' })
+
+    // ── HERO ENTRANCE ──
+    .fromTo('.hero-eyebrow',
+      { opacity: 0, y: 22 },
+      { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, 3.58
+    )
+    .fromTo('.hero-h1 .line1',
+      { opacity: 0, y: 68, skewX: -2 },
+      { opacity: 1, y: 0, skewX: 0, duration: 0.78, ease: 'power3.out' }, 3.74
+    )
+    .fromTo('.hero-h1 .line2',
+      { opacity: 0, y: 80, skewX: -2 },
+      { opacity: 1, y: 0, skewX: 0, duration: 0.78, ease: 'power3.out' }, 3.90
+    )
+    .fromTo('.hero-sub',
+      { opacity: 0, y: 28 },
+      { opacity: 1, y: 0, duration: 0.62, ease: 'power2.out' }, 4.06
+    )
+    .fromTo('.hero-ctas',
+      { opacity: 0, y: 18 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 4.24
+    )
+    .fromTo('.hero-scroll-indicator',
+      { opacity: 0 },
+      { opacity: 1, duration: 0.45 }, 4.42
+    );
+
+  // ── NAV scroll state ──
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // ── SERVICE CARD hover ──
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, {
+        y: -6,
+        background: 'rgba(27,58,45,0.52)',
+        borderLeftColor: '#C5953A',
+        duration: 0.22, ease: 'power2.out'
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, {
+        y: 0,
+        background: 'rgba(27,58,45,0.22)',
+        borderLeftColor: '#C4622D',
+        duration: 0.22, ease: 'power2.out'
+      });
+    });
+  });
+
+  // ── SCROLL-TRIGGERED REVEALS ──
+
+  // About: image slides in from left
+  gsap.from('.about-image-wrap', {
+    scrollTrigger: { trigger: '#about', start: 'top 78%', once: true },
+    x: -72, opacity: 0, duration: 0.95, ease: 'power3.out'
+  });
+
+  // About: text stagger in from right
+  gsap.from([
+    '.about-text .section-eyebrow',
+    '.about-text .section-heading',
+    '.about-text .section-body',
+    '.about-stats'
+  ], {
+    scrollTrigger: { trigger: '#about', start: 'top 72%', once: true },
+    x: 48, opacity: 0, stagger: 0.1, duration: 0.75, ease: 'power2.out'
+  });
+
+  // Services header
+  gsap.from('.services-header > *', {
+    scrollTrigger: { trigger: '#services', start: 'top 78%', once: true },
+    y: 38, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power2.out'
+  });
+
+  // Service cards stagger up
+  gsap.from('.service-card', {
+    scrollTrigger: { trigger: '.services-grid', start: 'top 80%', once: true },
+    y: 56, opacity: 0, stagger: 0.12, duration: 0.7, ease: 'power2.out'
+  });
+
+  // Approach content
+  gsap.from('.approach-content > *', {
+    scrollTrigger: { trigger: '#approach', start: 'top 70%', once: true },
+    x: -60, opacity: 0, stagger: 0.12, duration: 0.9, ease: 'power3.out'
+  });
+
+  // Contact
+  gsap.from('.contact-inner > div', {
+    scrollTrigger: { trigger: '#contact', start: 'top 75%', once: true },
+    y: 52, opacity: 0, stagger: 0.18, duration: 0.85, ease: 'power2.out'
+  });
+
+  // Footer
+  gsap.from('footer', {
+    scrollTrigger: { trigger: 'footer', start: 'top 92%', once: true },
+    y: 22, opacity: 0, duration: 0.6, ease: 'power2.out'
+  });
+</script>
+</body>
+</html>
