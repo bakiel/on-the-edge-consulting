@@ -910,6 +910,8 @@ footer {
           btn.textContent = 'Sending...';
           btn.disabled = true;
           const data = Object.fromEntries(new FormData(e.target));
+          data.client_id = 'ote';
+          data.honeypot = '';
           try {
             const res = await fetch('https://api.onthedge.co.za/contact', {
               method: 'POST',
